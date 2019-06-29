@@ -4,6 +4,7 @@ const userTypes = `
     id: ID!
     username: String!
     email: String!
+    enderecos:[ Endereco ]
   }
 `
 

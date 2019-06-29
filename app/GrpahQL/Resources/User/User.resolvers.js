@@ -2,14 +2,13 @@ const User = use('App/Models/User')
 
 const userResolver = {
   Query: {
-    // Fetch all users
+
     async allUsers () {
       const users = await User.all()
 
       return users.toJSON()
     },
 
-    // Get a user by its ID
     async user (_, { id }) {
       const user = await User.find(id)
 
@@ -21,6 +20,17 @@ const userResolver = {
     async createUser (_, { username, email, password }) {
       const user = await User.create({ username, email, password })
       return user
+    }
+  },
+
+  User: {
+    async enderecos (userInJson) {
+      const user = new User()
+      user.newUp(userInJson)
+
+      const enderecos = await user.enderecos().fetch()
+
+      return enderecos.toJSON()
     }
   }
 

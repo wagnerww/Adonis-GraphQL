@@ -33,7 +33,7 @@ class User extends Model {
    */
 
   enderecos () {
-    return this.hasMany('App/Models/Enderecos')
+    return this.hasMany('App/Models/Endereco')
   }
 
   tokens () {
