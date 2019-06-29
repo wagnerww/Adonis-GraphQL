@@ -16,7 +16,7 @@
 /** @type {typeof import('@adonisjs/framework/src/Route/Manager')} */
 const Route = use('Route')
 const ApolloServer = use('ApolloServer')
-const schema = require('../app/Schemas')
+const schema = require('../app/GrpahQL/Resources/schema')
 
 Route.get('/', ({ request }) => {
   return { greeting: 'Hello world in JSON' }

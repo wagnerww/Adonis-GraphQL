@@ -1,17 +1,19 @@
-const UserSchema = `
+const userTypes = `
+# Definição do typo User
   type User {
     id: ID!
     username: String!
     email: String!
   }
 `
-const UserQuery = `
+
+const UserQueries = `
   allUsers: [User]
   user(id: Int!): User
 `
 
-const UserMutation = `
+const UserMutations = `
   createUser (username: String!, email: String!, password: String!): User
 `
 
-module.exports = { UserSchema, UserQuery, UserMutation }
+module.exports = { userTypes, UserQueries, UserMutations }
