@@ -4,12 +4,14 @@ const UserSchema = `
     username: String!
     email: String!
   }
-
-
 `
 const UserQuery = `
-allUsers: [User]
-user(id: Int!): User
+  allUsers: [User]
+  user(id: Int!): User
 `
 
-module.exports = { UserSchema, UserQuery }
+const UserMutation = `
+  createUser (username: String!, email: String!, password: String!): User
+`
+
+module.exports = { UserSchema, UserQuery, UserMutation }

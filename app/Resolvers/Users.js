@@ -1,7 +1,6 @@
 const User = use('App/Models/User')
 
-const resolversUsers = {
-
+const resolversQueryUsers = {
   // Fetch all users
   async allUsers () {
     const users = await User.all()
@@ -17,4 +16,10 @@ const resolversUsers = {
   }
 }
 
-module.exports = resolversUsers
+const resolversMutationUsers = {
+  async createUser (_, { username, email, password }) {
+    return await User.create({ username, email, password })
+  }
+}
+
+module.exports = { resolversQueryUsers, resolversMutationUsers }

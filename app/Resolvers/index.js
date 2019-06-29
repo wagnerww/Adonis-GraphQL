@@ -1,10 +1,14 @@
-const resolversUsers = require('./Users')
+const { resolversQueryUsers, resolversMutationUsers } = require('./Users')
 const resolversEnderecos = require('./Enderecos')
 
 const Query = {
   Query: {
-    ...resolversUsers,
+    ...resolversQueryUsers,
     ...resolversEnderecos
+  },
+
+  Mutation: {
+    ...resolversMutationUsers
   }
 }
 
