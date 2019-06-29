@@ -18,7 +18,8 @@ const resolversQueryUsers = {
 
 const resolversMutationUsers = {
   async createUser (_, { username, email, password }) {
-    return await User.create({ username, email, password })
+    const user = await User.create({ username, email, password })
+    return user
   }
 }
 
